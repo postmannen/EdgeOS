@@ -39,7 +39,7 @@ if args.copy_www:
     # Always copy current build
     current_version = '0'
     with open(os.path.join(args.build_dir, 'mixversion'), 'r') as file:
-        current_version = file.read()
+        current_version = file.read().strip().strip('\r\n')
     print('Copying current version ({}) ...'.format(current_version))
     if os.path.isdir(os.path.join(args.copy_www, current_version)):
         shutil.rmtree(os.path.join(args.copy_www, current_version))
