@@ -59,6 +59,8 @@ if args.copy_www:
     
     # Copy versions directory
     print('Copying versions directory ...')
+    if os.path.isdir(os.path.join(args.copy_www, 'version')):
+        shutil.rmtree(os.path.join(args.copy_www, 'version'))
     shutil.copytree(os.path.join(args.build_dir, 'update/www/version'), os.path.join(args.copy_www, 'version'), copy_function=copy2_verbose)
 
 
