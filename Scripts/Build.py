@@ -103,7 +103,7 @@ for image_submodule in image_submodules:
 
 # Build all the images
 (_, images, _) = next(os.walk(images_build_dir))
-absolute_config_path = os.path.abspath(os.path.join(DIR, 'builder.conf'))
+absolute_config_path = os.path.abspath(os.path.join(args.build_dir, 'builder.conf'))
 for image in images:
     # Change workdingdir
     absoulute_image_path = os.path.abspath(os.path.join(images_build_dir, image))
