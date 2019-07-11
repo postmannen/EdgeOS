@@ -40,6 +40,7 @@ for section in git_config:
 print('Pulling latest from "{}" for branch "{}"'.format(git_remote_url, git_branch))
 
 subprocess.run(('git', 'pull'), cwd=os.path.join(DIR,'..'))
+subprocess.run(('git', 'submodule', 'update', '--init', '--recursive'), cwd=os.path.join(DIR,'..'))
 
 
 ## Update bundles from submodules
