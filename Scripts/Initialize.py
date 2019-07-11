@@ -52,3 +52,5 @@ with open(os.path.join(args.build_dir, 'builder.conf'), 'w') as file:
     file.write(builder_conf)
 
 RunMixerCommand('init', workdir=args.build_dir)
+
+os.mkdir(os.path.join(args.build_dir, 'images'))
