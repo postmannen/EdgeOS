@@ -44,13 +44,18 @@ builder_conf = '''
   LOCAL_RPM_DIR = "{0}/local-rpms"
   DOCKER_IMAGE_PATH = "clearlinux/mixer"
   OS_RELEASE_PATH = ""
-'''.format(args.build_dir, args.update_url)
+'''.format(os.path.abspath(args.build_dir), args.update_url)
+
+# Make build directory if it does not exist
+os.makedirs(args.build_dir, exist_ok=True)
 
 # Write config to file
 print('Writing mix configuration to {} ...'.format(os.path.join(args.build_dir, 'builder.conf')))
 with open(os.path.join(args.build_dir, 'builder.conf'), 'w') as file:
     file.write(builder_conf)
 
-RunMixerCommand('init', workdir=args.build_dir)
+RunMixerCommand('init', '--config', 'builder.conf', workdir=args.build_dir)
+os.remove(os.path.join(args.build_dir, 'builder.conf.bkp'))
 
+# Make custom images directory
 os.mkdir(os.path.join(args.build_dir, 'images'))
