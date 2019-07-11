@@ -1,0 +1,6 @@
+[submodule "Bundles/10-dolittle-edge"]
+	path = Bundles/10-dolittle-edge
+	url = https://github.com/dolittle-edge/EdgeOS-bundles.git
+[submodule "Images/10-dolittle-edge"]
+	path = Images/10-dolittle-edge
+	url = https://github.com/dolittle-edge/EdgeOS-images.git
