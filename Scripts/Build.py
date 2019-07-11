@@ -114,7 +114,7 @@ for image in images:
     # Build the image
     print('Building image {} ...'.format(image))
     RunMixerCommand('build', 'image', '--config', absolute_config_path, '--template', 'image-config.json')
-    print('Building image {} ...'.format(image), end='')
+    print('Size of image.img ...', end='')
     print(' {0:.0f} MiB'.format(os.path.getsize('image.img')/(2**20)))
 
     # Compress the image
