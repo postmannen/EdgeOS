@@ -4,3 +4,9 @@
 [submodule "Images/10-dolittle-edge"]
 	path = Images/10-dolittle-edge
 	url = https://github.com/dolittle-edge/EdgeOS-images.git
+[submodule "Bundles/20-shipos-foundation"]
+	path = Bundles/20-shipos-foundation
+	url = https://github.com/shipos-foundation/EdgeOS-bundles.git
+[submodule "Images/20-shipos-foundation"]
+	path = Images/20-shipos-foundation
+	url = https://github.com/shipos-foundation/EdgeOS-images.git
