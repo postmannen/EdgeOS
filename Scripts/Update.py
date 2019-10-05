@@ -71,7 +71,9 @@ updated_local_bundles = [bundle for bundle in bundles if len(bundles[bundle].str
 for bundle in updated_local_bundles:
     print('Writing local bundle {} ...'.format(bundle))
     with open(os.path.join(args.build_dir, 'local-bundles', bundle), 'w') as file:
-        file.write(bundles[bundle])
+        # HACK: Remove empty lines as the 'mixer build upstream-format' craps out on empty lines
+        nonempty_lines = [l for l in bundles[bundle].splitlines() if len(l) > 0]
+        file.write(os.linesep.join(nonempty_lines))
 
 for bundle in existing_local_bundles:
     if bundle not in updated_local_bundles:
